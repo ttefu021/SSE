@@ -12,6 +12,10 @@ let id;
 let connectionCounter = 0;
 let cancel
 
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
 app.post('/generate', (req, res_gen) => {
   console.log("Starting process");
 
@@ -125,7 +129,7 @@ function sendMessages(messages, res, delay) {
       console.log("Closing connection with client");
       res.end();
     }
-  }, 3000);
+  }, 1000);
 }
     
 app.listen(3000, '0.0.0.0', () => {
